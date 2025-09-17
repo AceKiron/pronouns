@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+        <link rel="shortcut icon" type="image/svg" href="/favicon.svg">
+        <link rel="fluid-icon" href="/favicon.svg">
+        <meta property="og:image" content="/favicon.svg">
+        <meta property="og:image:alt" content="{{ WEB_AUTHOR }}'s pronouns website icon">
+        
+        <link rel="canonical" href="{{ WEB_URL }}">
+        <meta property="og:url" content="{{ WEB_URL }}">
+
+        <title>{{ WEB_AUTHOR }}'s pronouns</title>
+        <meta name="og:title" content="{{ WEB_AUTHOR }}'s pronouns">
+        <meta property="og:site_name" content="{{ WEB_AUTHOR }}'s pronouns">
+
+        <meta name="author" content="{{ WEB_AUTHOR }}">
+
+        <meta name="description" content="{{ WEB_DESCRIPTION | safe }}">
+        <meta name="og:description" content="{{ WEB_DESCRIPTION | safe }}">
+        
+        <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
+    </head>
+    <body>
+        <header id="top"></header>
+
+        <main class="overflow-x-hidden bg-gray-400 text-white">
+            <nav class="fixed w-full z-40 py-5 top-0 bg-gray-500/95 flex items-center justify-between px-3">
+                <a href="#top" class="text-xl font-bold flex items-center space-x-2">
+                    <span class="text-pink-400">{{ WEB_AUTHOR }}'s</span>
+                    <span class="text-cyan-400">pronouns</span>
+                </a>
+            </nav>
+
+            <div class="mt-16 py-8 min-h-screen md:mx-2 lg:mx-4 xl:mx-8">
+                {% block content %}{% endblock %}
+            </div>
+
+            <footer class="relative border-t border-white/20 py-8 px-4 justify-between items-center flex flex-wrap">
+                <div>
+                    <p class="text-sm" data-type="copyright"></p>
+                    <p class="text-sm">
+                        All rights reserved.
+                    </p>
+                </div>
+
+                <a href="#top" class="p-2 rounded-full bg-cyan-600/50 hover:bg-cyan-500/20 transition-colors">
+                    <i data-lucide="arrow-up" class="size-[20px]"></i>
+                </a>
+            </footer>
+        </main>
+
+        <script src="{{ JS_INDEX }}"></script>
+        
+        <script src="https://unpkg.com/lucide@latest"></script>
+        <script>
+            lucide.createIcons();
+        </script>
+    </body>
+</html>

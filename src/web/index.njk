@@ -1,0 +1,104 @@
+{% extends "./template.njk" %}
+
+{% block content %}
+<div class="text-xl md:text-2xl lg:text-3xl mb-4">
+    <p>
+        Hi! My name is {{ YAML.name | title }}. {% if YAML.metadata.birthday %}I am <span data-type="author-age"></span> years old.{% endif %}
+    </p>
+    <p>
+        {{ YAML.metadata.web.description }}
+    </p>
+</div>
+
+{% if YAML["dont-out-me-to"] %}
+<div class="p-1">
+    <div class="bg-gray-200 py-1">
+        <h1 class="text-2xl {{ YAML.theme["dont-out-me-to"].title }}">
+            {% if YAML.assets["dont-out-me-to"].type == "image" %}
+            <img alt="Icon for the don't out me to section" src="/assets/{{ YAML.assets["dont-out-me-to"].data }}" class="inline size-5">
+            {% elif YAML.assets["dont-out-me-to"].type == "lucide" %}
+            <span data-lucide="{{ YAML.assets["dont-out-me-to"].data }}" class="inline size-5"></span>
+            {% endif %}
+            Please do not out me to:
+        </h1>
+        <ul class="text-xl ml-5 {{ YAML.theme["dont-out-me-to"].list }}">
+            {% for value in YAML["dont-out-me-to"].values %}
+            <li>- {{ value | capitalize }}</li>
+            {% endfor %}
+        </ul>
+    </div>
+</div>
+{% endif %}
+
+<div class="p-1">
+    <div class="bg-gray-200 py-1">
+        <h1 class="text-2xl {{ YAML.theme.yes.title }}">
+            {% if YAML.assets["terms-and-pronouns"].yes.type == "image" %}
+            <img alt="Icon for the don't out me to section" src="/assets/{{ YAML.assets["terms-and-pronouns"].yes.data }}" class="inline size-5">
+            {% elif YAML.assets["terms-and-pronouns"].yes.type == "lucide" %}
+            <span data-lucide="{{ YAML.assets["terms-and-pronouns"].yes.data }}" class="inline size-5"></span>
+            {% endif %}
+            I do prefer these pronouns:
+        </h1>
+        <ul class="text-xl ml-5 {{ YAML.theme.yes.list }}">
+            {% for value in YAML.pronouns.yes %}
+            <li>- {{ value | capitalize }}</li>
+            {% endfor %}
+        </ul>
+    </div>
+</div>
+
+<div class="p-1">
+    <div class="bg-gray-200 py-1">
+        <h1 class="text-2xl {{ YAML.theme.yes.title }}">
+            {% if YAML.assets["terms-and-pronouns"].yes.type == "image" %}
+            <img alt="Icon for the don't out me to section" src="/assets/{{ YAML.assets["terms-and-pronouns"].yes.data }}" class="inline size-5">
+            {% elif YAML.assets["terms-and-pronouns"].yes.type == "lucide" %}
+            <span data-lucide="{{ YAML.assets["terms-and-pronouns"].yes.data }}" class="inline size-5"></span>
+            {% endif %}
+            I do prefer these terms:
+        </h1>
+        <ul class="text-xl ml-5 {{ YAML.theme.yes.list }}">
+            {% for value in YAML.terms.yes %}
+            <li>- {{ value | capitalize }}</li>
+            {% endfor %}
+        </ul>
+    </div>
+</div>
+
+<div class="p-1">
+    <div class="bg-gray-200 py-1">
+        <h1 class="text-2xl {{ YAML.theme.no.title }}">
+            {% if YAML.assets["terms-and-pronouns"].no.type == "image" %}
+            <img alt="Icon for the don't out me to section" src="/assets/{{ YAML.assets["terms-and-pronouns"].no.data }}" class="inline size-5">
+            {% elif YAML.assets["terms-and-pronouns"].no.type == "lucide" %}
+            <span data-lucide="{{ YAML.assets["terms-and-pronouns"].no.data }}" class="inline size-5"></span>
+            {% endif %}
+            I do not prefer these pronouns:
+        </h1>
+        <ul class="text-xl ml-5 {{ YAML.theme.no.list }}">
+            {% for value in YAML.pronouns.no %}
+            <li>- {{ value | capitalize }}</li>
+            {% endfor %}
+        </ul>
+    </div>
+</div>
+
+<div class="p-1">
+    <div class="bg-gray-200 py-1">
+        <h1 class="text-2xl {{ YAML.theme.no.title }}">
+            {% if YAML.assets["terms-and-pronouns"].no.type == "image" %}
+            <img alt="Icon for the don't out me to section" src="/assets/{{ YAML.assets["terms-and-pronouns"].no.data }}" class="inline size-5">
+            {% elif YAML.assets["terms-and-pronouns"].no.type == "lucide" %}
+            <span data-lucide="{{ YAML.assets["terms-and-pronouns"].no.data }}" class="inline size-5"></span>
+            {% endif %}
+            I do not prefer these terms:
+        </h1>
+        <ul class="text-xl ml-5 {{ YAML.theme.no.list }}">
+            {% for value in YAML.terms.no %}
+            <li>- {{ value | capitalize }}</li>
+            {% endfor %}
+        </ul>
+    </div>
+</div>
+{% endblock %}

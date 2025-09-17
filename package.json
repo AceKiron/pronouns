@@ -1,0 +1,21 @@
+{
+  "name": "pronouns",
+  "type": "commonjs",
+  "version": "1.0.0",
+  "description": "Generates a website showing your preferred pronouns.",
+  "bin": "./src/index.js",
+  "main": "./src/index.js",
+  "keywords": [
+    "pronouns",
+    "trans",
+    "lgbtq"
+  ],
+  "author": "_mx_ace",
+  "license": "MIT",
+  "dependencies": {
+    "nunjucks": "^3.2.4",
+    "random-string-generator": "^1.0.7",
+    "yaml": "^2.8.1",
+    "yargs": "^18.0.0"
+  }
+}
